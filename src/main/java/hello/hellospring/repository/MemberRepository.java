@@ -1,16 +1,16 @@
 package hello.hellospring.repository;
 
-import hello.hellospring.domain.Member;
+import hello.hellospring.domain.member;
 import java.util.List;
 import java.util.Optional;
 
 public interface MemberRepository {
-    Member save(Member member);
+    member save(member member);
 
     // Optional: handling null
-    Optional<Member> findById(Long id);
+    Optional<member> findById(Long id);
 
-    Optional<Member> findByName(String name);
+    Optional<member> findByName(String name);
 
-    List<Member> findAll();
+    List<member> findAll();
 }
