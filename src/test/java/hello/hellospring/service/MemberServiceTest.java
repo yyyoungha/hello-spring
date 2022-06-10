@@ -1,8 +1,7 @@
 package hello.hellospring.service;
 
-import hello.hellospring.domain.member;
+import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemoryMemberRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,24 +28,24 @@ class MemberServiceTest {
     @Test
      void signUp() {
         //given
-        member newMember = new member();
+        Member newMember = new Member();
         newMember.setName("name");
 
         //when
         Long newMemberId = memberService.signUp(newMember);
 
         //then
-        member foundMember = memberService.findOne(newMemberId).get();
+        Member foundMember = memberService.findOne(newMemberId).get();
         assertThat(newMember.getName()).isEqualTo(foundMember.getName());
     }
 
     @Test
     public void duplicatedMember() {
         //given
-        member member1 = new member();
+        Member member1 = new Member();
         member1.setName("name");
 
-        member member2 = new member();
+        Member member2 = new Member();
         member2.setName("name");
 
         //when
